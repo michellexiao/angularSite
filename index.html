@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app='restaurant'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/public.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>Shanghai Cafe</title>
+  </head>
+  <body>
+
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="index.html" class="pull-left visible-md visible-lg">
+
+            </a>
+
+            <div class="navbar-brand">
+              <a href="index.html">
+                <h1>上海小吃铺 Shanghai Street Food Cafe</h1>
+              </a>
+            </div>
+          </div>
+
+          <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+              <li id="navHomeButton" class="visible-xs">
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-home"></span> Home</a>
+              </li>
+              <li id="navMenuButton" ui-sref-active="active">
+                <a ui-sref="public.menu">
+                  <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
+              </li>
+              <li>
+                <a ui-sref="public.myinfo">
+                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
+              </li>
+              <li>
+                <a ui-sref="public.signup">
+                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+              </li>
+
+            </ul><!-- #nav-list -->
+          </div><!-- .collapse .navbar-collapse -->
+        </div><!-- .container -->
+      </nav><!-- #header-nav -->
+    </header>
+
+    <ui-view></ui-view>
+
+
+
+  <footer class="panel-footer">
+      <div class="container">
+        <div class="row">
+          <section id="hours" class="col-sm-4">
+            <span>Hours:</span><br>
+            Mon-Fri: 11:00am - 10:00pm<br>
+            Weekends: 1:00pm - 10:00pm<br>
+            <hr class="visible-xs">
+          </section>
+          <section id="address" class="col-sm-4">
+            <span>Address:</span><br>
+            12900 Science Dr,Orlando, FL, 32826
+            <hr class="visible-xs">
+          </section>
+          <section id="testimonials" class="col-sm-4">
+            <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+            <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+          </section>
+        </div>
+        <div class="text-center">
+          &copy; Copyright Shanghai Cafe
+      </div>
+    </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- Libs -->
+
+  <script src="lib/jquery-2.1.4.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+
+  <!-- Common-->
+
+  <script src="common/app.js"></script>
+  <script src="common/menu.service.js"></script>
+  <script src="restaurant.module.js"></script>
+
+  <!-- Progress Bar -->
+  <script src="common/loading.module.js"></script>
+  <script src="common/loading.component.js"></script>
+  <script src="common/loading.interceptor.js"></script>
+
+  <!-- Public -->
+  <script src="public/public.module.js"></script>
+  <script src="public/public.routes.js"></script>
+  <script src="public/signUp/signUp.controller.js"></script>
+  <script src="public/other/myinfo.controller.js"></script>
+
+
+</body>
+</html>

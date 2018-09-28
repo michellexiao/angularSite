@@ -1,0 +1,54 @@
+<div class="container">
+
+ <h1>Search here to see our Chinese Menu options</h1>
+
+ <div class="form-group">
+   <input type="text" ng-model='menu.searchTerm' placeholder="Enter ingredients" class="form-control">
+ </div>
+
+ <div class="form-group narrow-button">
+   <!-- Trigger the modal with a button -->
+   <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click='menu.logMenuItems(menu.searchTerm)'>Narrow It Down For Me!</button>
+ </div>
+ <br>
+</br>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+
+ <!-- Modal content-->
+ <div class="modal-content">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <h4 class="modal-title">Hi there</h4>
+   </div>
+   <div class="modal-body">
+     <p>Give us some time, we are almost there!</p>
+     <br>
+     <loading></loading>
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   </div>
+ </div>
+
+</div>
+</div>
+
+
+ <!-- found-items should be implemented as a component -->
+   <found-items
+   found="menu.found"
+   order="menu.order"
+   title="{{menu.title}}"
+   on-remove="menu.removeItems(index)"
+   put-back="menu.putBackItems(index)">
+ </found-items>
+
+ <!-- progressBar will be displayed based on how many records are found -->
+
+
+ <div class="error" ng-if="menu.nothingFound">Nothing found</div>
+
+</div>

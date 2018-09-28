@@ -1,0 +1,23 @@
+<div class="container">
+<legend class = "legend">Registered information</legend>
+
+    <div>
+      First name: {{ myInfoCtrl.user.fname}}
+      <br>
+      Last name: {{ myInfoCtrl.user.lname}}
+      <br>
+      Email: {{ myInfoCtrl.user.email}}
+      <br>
+      Phone: {{ myInfoCtrl.user.phone }}
+      <br>
+      Favorite: {{myInfoCtrl.user.short_name}}
+      <br>
+<img class="img-responsive" width="250" height="150" ng-src="images/menu/{{myInfoCtrl.item.category_short_name}}/{{myInfoCtrl.item.category_short_name}}.jpg"
+                                alt="{{info.user.favorite}}">
+
+      {{myInfoCtrl.item.name}}
+      <br>
+      {{myInfoCtrl.item.description}}
+
+    </div>
+</div>

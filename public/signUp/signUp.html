@@ -1,0 +1,62 @@
+<div class="container">
+  <fieldset>
+        <legend class = "legend">Register here to sign up</legend>
+        <form name='signUpForm' novalidate>
+
+          <input type="text" name="fname" placeholder="Your First Name"
+            ng-model="signUpCtrl.user.fname"
+            required>
+            {{ signUpCtrl.user.fname }}
+
+            <span ng-if="signUpForm.fname.$error.required && signUpForm.fname.$touched">
+              First Name is required
+            </span>
+            <br>
+
+            <input type="text" name="lname" placeholder="Your Last Name"
+              ng-model="signUpCtrl.user.lname"
+              required>
+              {{ signUpCtrl.user.lname }}
+
+              <span ng-if="signUpForm.lname.$error.required && signUpForm.lname.$touched">
+                Last Name is required
+              </span>
+              <br>
+
+          <input type="email" name="email" placeholder="Email"
+            ng-model="signUpCtrl.user.email"
+            required>
+            {{ signUpCtrl.user.email }}
+            <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+              Must be a valid email address: handle@domain format
+            </span>
+            <br>
+
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+            ng-model="signUpCtrl.user.phone"
+            pattern="(\d{3})-(\d{3})-(\d{4})">
+            {{signUpCtrl.user.phone }}
+            <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+              Phone must be in the format ###-###-####.
+            </span>
+            <br>
+
+            <input type="text" name="favorite" placeholder="Favorite(Short Name)"
+              ng-model="signUpCtrl.user.short_name" ng-model-options="{ updateOn: 'blur' }">
+              {{ signUpCtrl.user.short_name }}
+              <!-- <span ng-if="signUpForm.phone.$touched && !signUpCtrl.validateShortName(signUpCtrl.user.short_name)"> -->
+              No such menu number exists</span>
+              <br>
+
+          <button
+            ng-disabled="signUpForm.$invalid"
+            ng-click="signUpCtrl.submit()">Submit</button>
+
+            <div style="margin-top: 10px;">
+              Form valid? {{ signUpForm.$valid }}
+              <br>
+              <span ng-if = "signUpCtrl.completed">Your information has been saved</span>
+            </div>
+        </form>
+      </fieldset>
+</div>
